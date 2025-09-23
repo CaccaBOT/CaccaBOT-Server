@@ -1,5 +1,6 @@
 export const server = require('fastify')({
-  bodyLimit: 8388608
+  bodyLimit: 8388608,
+  http2: process.env.ENVIRONMENT == 'production'
 })
 import { FastifyRequest, FastifyReply } from 'fastify'
 import { initDatabase } from './database/index'
